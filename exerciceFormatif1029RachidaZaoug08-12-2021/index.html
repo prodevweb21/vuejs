@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+    <title>Exercice Formatif 1</title>
+</head>
+<body>
+    <div id="app">
+        <todolist v-for="todolist in list" :name="todolist"
+        v-bind:key="list.id"
+        v-bind:title="list.title">
+       </todolist>;
+
+        <todo></todo>
+
+        <todoedit></todoedit>
+      
+    </div>
+
+<!-- 3e composant -->
+
+<script type="text/x-template" id="todoedit-template">
+    
+    <div id="v-model-radiobutton">
+        <input type="text" value="text" v-model="message" />
+        <br />
+        <input type="text" value="text" v-model="message" />
+        <br />
+        <!-- <span> Voici {{ projet }} </span> -->
+        <button v-on:click="say">Submit</button>
+    </div>
+
+    
+
+</script>
+
+
+
+<!--2e composant  -->
+
+<script type="text/x-template" id="todo-template">
+    
+        <table>
+            <tr><h2>{{titre}}</h2></tr>
+            <tr><h3>{{projet}}</h3></tr>
+        </table>
+</script>
+
+<!-- 1er composantt -->
+    <script type="text/x-template" id="todolist-template">
+        <ul id="myDIV" class="header">
+            <li class="description"><h2>{{name.project}}</h2></li>
+        </ul>
+    </script>
+    
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>
+
+
